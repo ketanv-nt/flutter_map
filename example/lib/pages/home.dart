@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_example/cred.dart';
 import 'package:flutter_map_example/widgets/drawer.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -57,17 +58,18 @@ class HomePage extends StatelessWidget {
                   center: LatLng(51.5, -0.09),
                   zoom: 5,
                 ),
-                nonRotatedChildren: [
-                  AttributionWidget.defaultWidget(
-                    source: 'OpenStreetMap contributors',
-                    onSourceTapped: () {},
-                  ),
+                nonRotatedChildren: const [
+                  // AttributionWidget.defaultWidget(
+                  //   source: 'OpenStreetMap contributors',
+                  //   onSourceTapped: () {},
+                  // ),
                 ],
                 children: [
                   TileLayer(
-                    urlTemplate:
-                        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+                    urlTemplate: secretUrl,
+                    // urlTemplate:
+                    //     'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    // userAgentPackageName: 'dev.fleaflet.flutter_map.example',
                   ),
                   MarkerLayer(markers: markers),
                 ],

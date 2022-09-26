@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_example/cred.dart';
 import 'package:latlong2/latlong.dart';
 
 void main() {
@@ -34,8 +35,8 @@ class _TestAppState extends State<TestApp> {
               ),
               children: [
                 TileLayer(
-                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+                  urlTemplate: secretUrl,
+                  //userAgentPackageName: 'dev.fleaflet.flutter_map.example',
                 ),
               ],
             ),
